@@ -1,0 +1,361 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome4",
+    "definitions": {
+        "Welcome4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "users": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/User"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                },
+                "skip": {
+                    "type": "integer"
+                },
+                "limit": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "limit",
+                "skip",
+                "total",
+                "users"
+            ],
+            "title": "Welcome4"
+        },
+        "User": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "maidenName": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                },
+                "gender": {
+                    "$ref": "#/definitions/Gender"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "birthDate": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "bloodGroup": {
+                    "type": "string"
+                },
+                "height": {
+                    "type": "number"
+                },
+                "weight": {
+                    "type": "number"
+                },
+                "eyeColor": {
+                    "type": "string"
+                },
+                "hair": {
+                    "$ref": "#/definitions/Hair"
+                },
+                "ip": {
+                    "type": "string"
+                },
+                "address": {
+                    "$ref": "#/definitions/Address"
+                },
+                "macAddress": {
+                    "type": "string"
+                },
+                "university": {
+                    "type": "string"
+                },
+                "bank": {
+                    "$ref": "#/definitions/Bank"
+                },
+                "company": {
+                    "$ref": "#/definitions/Company"
+                },
+                "ein": {
+                    "type": "string"
+                },
+                "ssn": {
+                    "type": "string"
+                },
+                "userAgent": {
+                    "type": "string"
+                },
+                "crypto": {
+                    "$ref": "#/definitions/Crypto"
+                },
+                "role": {
+                    "$ref": "#/definitions/Role"
+                }
+            },
+            "required": [
+                "address",
+                "age",
+                "bank",
+                "birthDate",
+                "bloodGroup",
+                "company",
+                "crypto",
+                "ein",
+                "email",
+                "eyeColor",
+                "firstName",
+                "gender",
+                "hair",
+                "height",
+                "id",
+                "image",
+                "ip",
+                "lastName",
+                "macAddress",
+                "maidenName",
+                "password",
+                "phone",
+                "role",
+                "ssn",
+                "university",
+                "userAgent",
+                "username",
+                "weight"
+            ],
+            "title": "User"
+        },
+        "Address": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "stateCode": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "coordinates": {
+                    "$ref": "#/definitions/Coordinates"
+                },
+                "country": {
+                    "$ref": "#/definitions/Country"
+                }
+            },
+            "required": [
+                "address",
+                "city",
+                "coordinates",
+                "country",
+                "postalCode",
+                "state",
+                "stateCode"
+            ],
+            "title": "Address"
+        },
+        "Coordinates": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "lat": {
+                    "type": "number"
+                },
+                "lng": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "lat",
+                "lng"
+            ],
+            "title": "Coordinates"
+        },
+        "Bank": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "cardExpire": {
+                    "type": "string"
+                },
+                "cardNumber": {
+                    "type": "string"
+                },
+                "cardType": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "iban": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cardExpire",
+                "cardNumber",
+                "cardType",
+                "currency",
+                "iban"
+            ],
+            "title": "Bank"
+        },
+        "Company": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "department": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "address": {
+                    "$ref": "#/definitions/Address"
+                }
+            },
+            "required": [
+                "address",
+                "department",
+                "name",
+                "title"
+            ],
+            "title": "Company"
+        },
+        "Crypto": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "coin": {
+                    "$ref": "#/definitions/Coin"
+                },
+                "wallet": {
+                    "$ref": "#/definitions/Wallet"
+                },
+                "network": {
+                    "$ref": "#/definitions/Network"
+                }
+            },
+            "required": [
+                "coin",
+                "network",
+                "wallet"
+            ],
+            "title": "Crypto"
+        },
+        "Hair": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "color": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/Type"
+                }
+            },
+            "required": [
+                "color",
+                "type"
+            ],
+            "title": "Hair"
+        },
+        "Country": {
+            "type": "string",
+            "enum": [
+                "United States"
+            ],
+            "title": "Country"
+        },
+        "Coin": {
+            "type": "string",
+            "enum": [
+                "Bitcoin"
+            ],
+            "title": "Coin"
+        },
+        "Network": {
+            "type": "string",
+            "enum": [
+                "Ethereum (ERC20)"
+            ],
+            "title": "Network"
+        },
+        "Wallet": {
+            "type": "string",
+            "enum": [
+                "0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a"
+            ],
+            "title": "Wallet"
+        },
+        "Gender": {
+            "type": "string",
+            "enum": [
+                "female",
+                "male"
+            ],
+            "title": "Gender"
+        },
+        "Type": {
+            "type": "string",
+            "enum": [
+                "Curly",
+                "Straight",
+                "Wavy",
+                "Kinky"
+            ],
+            "title": "Type"
+        },
+        "Role": {
+            "type": "string",
+            "enum": [
+                "admin",
+                "moderator",
+                "user"
+            ],
+            "title": "Role"
+        }
+    }
+}
